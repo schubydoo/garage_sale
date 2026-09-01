@@ -57,7 +57,7 @@ export const HomeBookButtonDialog = ({
 
   return (
     <Dialog onClose={onClose}>
-      <div className="border-0 rounded-lg shadow-lg flex flex-col bg-white w-screen max-w-screen-lg p-4 md:p-8">
+      <div className="border-0 rounded-lg shadow-lg flex flex-col bg-white w-screen max-w-(--breakpoint-lg) p-4 md:p-8">
         <div className="flex justify-between space-x-2">
           <div className="text-lg font-bold text-primary-600">
             {t("bookDialog.title.youAreAbout", { count: selectedItems.length })}
@@ -76,7 +76,7 @@ export const HomeBookButtonDialog = ({
           />
         </div>
         <div className="pt-10 flex justify-center" onClick={onBookClick}>
-          <button className="bg-primary-600 hover:bg-primary-500 active:bg-primary-400 text-white text-base py-1.5 w-full rounded max-w-xl">
+          <button className="bg-primary-600 hover:bg-primary-500 active:bg-primary-400 text-white text-base py-1.5 w-full rounded-sm max-w-xl">
             {t("bookDialog.button.bookSelected")}
           </button>
         </div>

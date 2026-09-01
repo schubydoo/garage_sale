@@ -24,6 +24,10 @@ export const useFetchGoods = () => {
   }, []);
 
   useEffect(() => {
+    // react-hooks 7 flags the setIsLoading(true) inside fetchGoods as a
+    // cascading render. Fetch-on-mount is the app's existing data strategy;
+    // moving it server-side is tracked separately.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchGoods();
   }, [fetchGoods]);
 

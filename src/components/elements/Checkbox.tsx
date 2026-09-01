@@ -10,7 +10,7 @@ export const Checkbox = ({ label, checked, ...props }: OwnProps) => {
     <label className="inline-flex items-center">
       <input
         type="checkbox"
-        className="text-primary-500 hover:text-primary-400 focus:ring-0 focus:ring-offset-0 text-lg rounded-sm"
+        className="text-primary-500 hover:text-primary-400 focus:ring-0 focus:ring-offset-0 text-lg rounded-xs"
         defaultChecked={checked}
         {...props}
       />

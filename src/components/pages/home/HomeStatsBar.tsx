@@ -36,7 +36,7 @@ export const HomeStatsBar = ({ goods = [], isLoading = false }: OwnProps) => {
 
   return (
     <div className="pt-12 md:pt-14 bg-gray-100 w-screen">
-      <div className="px-2 md:px-6 max-w-screen-xl m-auto">
+      <div className="px-2 md:px-6 max-w-(--breakpoint-xl) m-auto">
         <div className="flex h-8 justify-between items-center">
           {isLoading ? (
             <div className="text-gray-700">Loading stats...</div>

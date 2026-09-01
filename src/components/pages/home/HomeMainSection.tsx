@@ -35,7 +35,7 @@ export const HomeMainSection = ({
   }, [goods, filters, selected]);
 
   return (
-    <div className="px-2 md:px-6 max-w-screen-xl m-auto h-full flex flex-col">
+    <div className="px-2 md:px-6 max-w-(--breakpoint-xl) m-auto h-full flex flex-col">
       <div className="py-3 md:py-5">
         <HomeInfoCard />
       </div>
@@ -44,7 +44,7 @@ export const HomeMainSection = ({
         updateFilters={(value) => setFilters(value)}
         goodsCount={filteredGoods.length}
       />
-      <div className="flex-grow pt-4">
+      <div className="grow pt-4">
         <HomeGoodList
           isLoading={isLoading}
           goods={filteredGoods}

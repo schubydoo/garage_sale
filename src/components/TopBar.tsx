@@ -24,7 +24,7 @@ export const TopBar = ({ selected = 1, openBookDialog }: OwnProps) => {
 
   return (
     <div className="bg-primary-600 fixed top-0 z-20 w-screen h-12 md:h-14">
-      <div className="px-2 md:px-6 max-w-screen-xl m-auto h-full">
+      <div className="px-2 md:px-6 max-w-(--breakpoint-xl) m-auto h-full">
         <div className="flex justify-between items-center h-full">
           {/* Desktop logo */}
           <div className="hidden md:flex items-center">

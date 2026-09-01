@@ -46,7 +46,7 @@ export const HomeGoodCard = ({
 
   return (
     <div
-      className={`border rounded h-56 p-1.5 md:p-3.5 flex flex-none ${getCardStyles()}`}
+      className={`border rounded-sm h-56 p-1.5 md:p-3.5 flex flex-none ${getCardStyles()}`}
     >
       {/* Card Left Side */}
       <div
@@ -60,7 +60,7 @@ export const HomeGoodCard = ({
       </div>
 
       {/* Card Right Side */}
-      <div className="pl-2.5 md:pl-4 pr-1 md:pr-0 flex flex-col flex-grow">
+      <div className="pl-2.5 md:pl-4 pr-1 md:pr-0 flex flex-col grow">
         <HomeGooodCardTitle
           nameEn={data.name_en}
           nameJp={data.name_jp}
@@ -76,7 +76,7 @@ export const HomeGoodCard = ({
           descriptionJp={data.description_jp}
         />
 
-        <div className="flex justify-between flex-grow">
+        <div className="flex justify-between grow">
           {/* Lower Left Side */}
           <div className="flex flex-col justify-between pt-2">
             <HomeGoodCardStatusBadge status={data.status} />
