@@ -25,7 +25,7 @@ export const parseGoodsResponse = (values: any[]): Good[] => {
   const tableHeaders = values[0];
   const tableRows = values.slice(1);
 
-  const propIndexes = <{ [key in keyof typeof GoodDbPropName]: number }>{};
+  const propIndexes: Record<string, number> = {};
 
   for (const prop in GoodDbPropName) {
     // Condition to ignore the numeric values stored in the enum.

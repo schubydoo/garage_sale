@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 
-import { axiosInstance } from "../services/axios/apiCore";
+import { apiGet, apiPost } from "../services/api/client";
 import { BookRequest, BookResponse, Good } from "../types";
 
 export const useFetchGoods = () => {
@@ -12,8 +12,7 @@ export const useFetchGoods = () => {
     setIsLoading(true);
 
     try {
-      const res = await axiosInstance.get("goods");
-      const goods = await res.data;
+      const goods = await apiGet<Good[]>("goods");
 
       setGoods(goods);
     } catch (error) {
@@ -26,15 +25,14 @@ export const useFetchGoods = () => {
 
   useEffect(() => {
     fetchGoods();
-  }, []);
+  }, [fetchGoods]);
 
   const bookGoods = useCallback(
     async (req: BookRequest): Promise<BookResponse> => {
       setIsPosting(true);
 
       try {
-        const res = await axiosInstance.post<BookResponse>("goods", req);
-        return res.data;
+        return await apiPost<BookResponse>("goods", req);
       } catch (error) {
         alert("Unexpected error. Please refresh the browser and try again");
       } finally {
