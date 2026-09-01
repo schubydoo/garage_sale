@@ -36,7 +36,7 @@ export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
             src={good.image_url}
             decoding="async"
             alt="Item image"
-            className="rounded bg-gray-50 shadow-inner cursor-pointer"
+            className="rounded-sm bg-gray-50 shadow-inner cursor-pointer"
           />
         </div>
         <div className="py-3 whitespace-pre-wrap">

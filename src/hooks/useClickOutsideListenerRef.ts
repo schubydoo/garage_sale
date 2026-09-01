@@ -14,7 +14,7 @@ export const useClickOutsideListenerRef = (onClose: () => void) => {
   }, []);
 
   const clickListener = useCallback(
-    (e: MouseEvent) => {
+    (e: PointerEvent) => {
       if (!(ref.current! as any)?.contains(e.target)) {
         onClose?.();
       }
@@ -25,11 +25,18 @@ export const useClickOutsideListenerRef = (onClose: () => void) => {
   );
 
   useEffect(() => {
-    document.addEventListener("click", clickListener);
+    // "pointerdown" rather than "click" on purpose. The click that opens a
+    // dialog is still propagating when React mounts it, and since React 18
+    // effects attached during a discrete event run before that event finishes
+    // reaching document. A "click" listener would therefore catch the opening
+    // click, see a target outside the dialog, and close it again immediately.
+    // pointerdown for the opening interaction has already been dispatched by
+    // the time this runs, so only a genuine later press closes the dialog.
+    document.addEventListener("pointerdown", clickListener);
     document.addEventListener("keyup", escapeListener);
 
     return () => {
-      document.removeEventListener("click", clickListener);
+      document.removeEventListener("pointerdown", clickListener);
       document.removeEventListener("keyup", escapeListener);
     };
 

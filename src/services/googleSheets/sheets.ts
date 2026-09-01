@@ -22,8 +22,7 @@ async function getClient() {
     scopes: "https://www.googleapis.com/auth/spreadsheets",
   });
 
-  const client = await auth.getClient();
-  gapiClient = google.sheets({ version: "v4", auth: client });
+  gapiClient = google.sheets({ version: "v4", auth });
 
   return gapiClient;
 }

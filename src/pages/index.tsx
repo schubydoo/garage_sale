@@ -72,14 +72,14 @@ export default function Home() {
   return (
     <div className="w-screen bg-white font-sans text-gray-900 text-sm h-screen flex flex-col">
       <Head />
-      <main className="flex-grow">
+      <main className="grow">
         <TopBar
           selected={selected.length}
           openBookDialog={() => setIsModalOpen(true)}
         />
         <div className="h-full flex flex-col">
           <HomeStatsBar goods={goods} isLoading={isLoading} />
-          <div className="flex-grow">
+          <div className="grow">
             <HomeMainSection
               isLoading={isLoading}
               goods={goods}

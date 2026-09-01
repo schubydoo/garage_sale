@@ -56,7 +56,7 @@ export const HomeBookButtonDialogForm = ({
             id={t("bookDialog.fieldName.comments")}
             value={input.comments}
             rows={4}
-            className="text-sm placeholder-gray-400 rounded-sm border border-gray-300 appearance-none focus:outline-none focus:border-primary-600"
+            className="text-sm placeholder-gray-400 rounded-xs border border-gray-300 appearance-none focus:outline-hidden focus:border-primary-600"
             onChange={(e) =>
               onInputChange({ ...input, comments: e.target.value })
             }
